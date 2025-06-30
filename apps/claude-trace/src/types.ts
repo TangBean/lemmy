@@ -93,13 +93,6 @@ export interface BedrockBinaryEvent {
 	p?: string; // additional payload
 }
 
-export interface BedrockEventStreamChunk {
-	"event-type": string;
-	"content-type": string;
-	"message-type": string;
-	data: BedrockBinaryEvent;
-}
-
 export interface BedrockInvocationMetrics {
 	inputTokenCount: number;
 	outputTokenCount: number;
@@ -107,11 +100,6 @@ export interface BedrockInvocationMetrics {
 	firstByteLatency: number;
 	cacheReadInputTokenCount?: number;
 	cacheWriteInputTokenCount?: number;
-}
-
-export interface BedrockMessageStopEvent {
-	type: "message_stop";
-	"amazon-bedrock-invocationMetrics": BedrockInvocationMetrics;
 }
 
 declare global {
